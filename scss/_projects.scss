@@ -1,0 +1,105 @@
+.projects {
+  padding-bottom: 2rem;
+
+  &__bio-image {
+    height: 30vh;
+    width: 100%;
+    background: linear-gradient(
+        to right,
+        rgba($primary-color, 0.9),
+        rgba($primary-color, 0.3)
+      ),
+      url("../img/linda-motorcycle.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 0% 28%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+
+    .text-secondary {
+      font-size: 2rem;
+      margin-bottom: 2rem;
+    }
+  }
+
+  &__items {
+    width: 60vw;
+    margin: 2rem auto 0 auto;
+    display: grid;
+    grid-template-columns: 2fr;
+    grid-gap: 2rem;
+
+    h1 {
+      font-weight: 200;
+      font-size: 1.8rem;
+      text-align: center;
+      color: $secondary-color;
+    }
+  }
+
+  &__item {
+    position: relative;
+    border-bottom: 5px solid $secondary-color;
+    overflow: hidden;
+    cursor: pointer;
+
+    img {
+      width: 100%;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 100%;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background: $secondary-color;
+      opacity: 0;
+      @include transition-ease;
+    }
+
+    &:hover {
+      &::after {
+        top: 0;
+        opacity: 0.8;
+      }
+      .projects__btn {
+        opacity: 1;
+      }
+    }
+  }
+
+  &__btns {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    text-align: center;
+  }
+
+  &__btn {
+    opacity: 0;
+    color: set-text-color($secondary-color);
+    @include transition-ease;
+
+    &:hover {
+      color: set-text-color(set-text-color($secondary-color));
+    }
+  }
+
+  .social-icons {
+    display: flex;
+    flex-direction: column;
+  }
+
+  footer {
+    transform: rotate(90deg) translate(-3rem, -5rem);
+  }
+}

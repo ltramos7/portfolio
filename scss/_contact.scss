@@ -1,0 +1,49 @@
+.contact {
+  height: 100%;
+  padding-top: 40vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: linear-gradient(
+      to right,
+      rgba($primary-color, 0.9),
+      rgba($primary-color, 0.3)
+    ),
+    url("../img/linda-motorcycle.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 0% 38%;
+
+  h2 {
+    font-size: 3rem;
+    margin-bottom: 2rem;
+  }
+
+  i {
+    padding-right: 10px;
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 2rem;
+    font-size: 1.5rem;
+    font-weight: 400;
+    text-align: center;
+  }
+
+  &__item {
+    font-size: 2rem;
+    // color: $secondary-color;
+  }
+
+  .social-icons {
+    position: initial;
+    margin-top: 2rem;
+  }
+
+  //   .text-secondary {
+  //     color: red;
+  //   }
+}

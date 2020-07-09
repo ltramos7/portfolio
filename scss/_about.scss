@@ -1,0 +1,235 @@
+.about {
+  padding-bottom: 2rem;
+  font-weight: 300;
+
+  h1 {
+    font-size: 3rem;
+  }
+
+  h5 {
+    font-weight: 200;
+    font-size: 1rem;
+    font-style: italic;
+  }
+
+  &__bio-image {
+    height: 50vh;
+    width: 100%;
+    background: linear-gradient(
+        to right,
+        rgba($primary-color, 0.9),
+        rgba($primary-color, 0.3)
+      ),
+      url("../img/linda-motorcycle.jpg") center top;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 0% 28%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+
+    p {
+      margin-bottom: 2rem;
+    }
+  }
+
+  &__bio {
+    width: 80%;
+    text-align: center;
+  }
+
+  .text-secondary {
+    padding-bottom: 1rem;
+    font-size: 2rem;
+  }
+  .time-line-title {
+    font-size: 1.5rem;
+    color: $secondary-color;
+  }
+
+  .info {
+    width: 70vw;
+    margin: 2rem auto 2rem auto;
+    // @include transition-ease; this isn't working right now. I want to use to to make the link to We All Code look more interactive.
+
+    h3 {
+      margin-bottom: 0.5rem;
+    }
+
+    p {
+      margin-bottom: 1.5rem;
+    }
+
+    a {
+      color: $secondary-color;
+      font-size: 2rem;
+    }
+
+    #small {
+      color: #ff652f;
+      font-size: 16px;
+    }
+  }
+
+  .jobs {
+    width: 60vw;
+    margin: 2rem auto 0 auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 2rem;
+
+    &__job {
+      background: lighten($primary-color, 10%);
+      padding: 0.5rem;
+      border-bottom: 5px solid $secondary-color;
+
+      h2,
+      h3,
+      h5 {
+        margin: 0.5rem 0;
+      }
+    }
+  }
+
+  .social-icons {
+    display: flex;
+    flex-direction: column;
+  }
+
+  footer {
+    transform: rotate(90deg) translate(-3rem, -5rem);
+  }
+
+  &__text {
+    text-align: left;
+    padding-left: 10rem;
+    padding-right: 10rem;
+  }
+
+  .two-columns {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .right-align {
+    align-self: center;
+    justify-self: center;
+    margin-right: 2rem;
+  }
+
+  .timeline {
+    position: relative;
+    // max-width: 1200px;
+    margin: 50px 200px 100px 200px;
+    // margin-left: 200px;
+    // margin-right: 200px;
+    // margin-bottom: 100px;
+  }
+
+  .timeline::after {
+    content: "";
+    position: absolute;
+    width: 6px;
+    background-color: white;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -3px;
+  }
+
+  .container {
+    padding: 10px 40px;
+    position: relative;
+    background-color: inherit;
+    width: 50%;
+    color: black;
+  }
+
+  .container::after {
+    content: "";
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    right: -17px;
+    background-color: white;
+    border: 4px solid #ff9f55;
+    top: 15px;
+    border-radius: 50%;
+    z-index: 1;
+  }
+
+  .left {
+    left: 0;
+  }
+
+  .right {
+    left: 50%;
+  }
+
+  .left::before {
+    content: " ";
+    height: 0;
+    position: absolute;
+    top: 22px;
+    width: 0;
+    z-index: 1;
+    right: 30px;
+    border: medium solid white;
+    border-width: 10px 0 10px 10px;
+    border-color: transparent transparent transparent white;
+  }
+
+  .right::before {
+    content: " ";
+    height: 0;
+    position: absolute;
+    top: 22px;
+    width: 0;
+    z-index: 1;
+    left: 30px;
+    border: medium solid white;
+    border-width: 10px 10px 10px 0;
+    border-color: transparent white transparent transparent;
+  }
+
+  .right::after {
+    left: -16px;
+  }
+
+  .content {
+    padding: 20px 30px;
+    background-color: white;
+    position: relative;
+    border-radius: 6px;
+  }
+
+  // This needs to be moved to responsive folder. I will need to import files probably.
+  @media screen and (max-width: 600px) {
+    .timeline::after {
+      left: 31px;
+    }
+
+    .container {
+      width: 100%;
+      padding-left: 70px;
+      padding-right: 25px;
+    }
+
+    .container::before {
+      left: 60px;
+      border: medium solid white;
+      border-width: 10px 10px 10px 0;
+      border-color: transparent white transparent transparent;
+    }
+
+    .left::after,
+    .right::after {
+      left: 15px;
+    }
+
+    .right {
+      left: 0%;
+    }
+  }
+}
